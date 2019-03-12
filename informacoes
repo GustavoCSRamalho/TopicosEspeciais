@@ -19,6 +19,8 @@ create table livro (
   autor varchar(100) not null,
   descricao varchar(200) not null,
   categoria varchar(50) not null,
+  pessoa_id bigint unsigned not null,
+  foreign key pessoa_fk (pessoa_id) references pessoa (id) on delete restrict on update cascade,
   constraint id_pk primary key (id),
   constraint nome_uk unique key (nome)
 );
